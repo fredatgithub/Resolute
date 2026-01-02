@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Resolute.Cli/Resolute.Cli.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Resolute.UnitTests/Resolute.UnitTests.csproj" />
+  </Folder>
+</Solution>
