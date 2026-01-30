@@ -1,6 +1,6 @@
-using ConsoleApp.Models;
+﻿using ConsoleApp.Models;
 
-namespace ConsoleApp.UnitTests.Models;
+namespace Resolute.UnitTests.Models;
 
 public class ReminderType_Enum
 {

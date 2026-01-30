@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,7 +31,7 @@ public class ReminderService
         return dueResolutions;
     }
 
-    public async Task<bool> IsDueForCheckInAsync(Resolution resolution)
+    public static async Task<bool> IsDueForCheckInAsync(Resolution resolution)
     {
         var lastCheckIn = resolution.CheckIns.OrderByDescending(c => c.Date).FirstOrDefault();
         var lastCheckInDate = lastCheckIn?.Date ?? resolution.CreatedDate;
@@ -64,7 +64,7 @@ public class ReminderService
         return false;
     }
 
-    public DateTime? CalculateNextReminderDate(Resolution resolution)
+    public static DateTime? CalculateNextReminderDate(Resolution resolution)
     {
         var lastCheckIn = resolution.CheckIns.OrderByDescending(c => c.Date).FirstOrDefault();
         var lastCheckInDate = lastCheckIn?.Date ?? resolution.CreatedDate;

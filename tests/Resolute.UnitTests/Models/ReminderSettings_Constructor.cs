@@ -1,6 +1,6 @@
-using ConsoleApp.Models;
+﻿using ConsoleApp.Models;
 
-namespace ConsoleApp.UnitTests.Models;
+namespace Resolute.UnitTests.Models;
 
 public class ReminderSettings_Constructor
 {
@@ -9,7 +9,7 @@ public class ReminderSettings_Constructor
     {
         var settings = new ReminderSettings();
 
-        Assert.Equal(default(ReminderType), settings.Type);
+        Assert.Equal(default, settings.Type);
     }
 
     [Fact]

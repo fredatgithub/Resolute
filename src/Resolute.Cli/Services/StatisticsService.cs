@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using ConsoleApp.Models;
@@ -40,7 +40,7 @@ public class StatisticsService
         };
     }
 
-    private Dictionary<string, CategoryStats> GetCategoryBreakdown(List<Resolution> resolutions)
+    private static Dictionary<string, CategoryStats> GetCategoryBreakdown(List<Resolution> resolutions)
     {
         return resolutions
             .GroupBy(r => r.Category)
@@ -58,7 +58,7 @@ public class StatisticsService
             );
     }
 
-    private int CalculateCurrentStreak(List<Resolution> resolutions)
+    private static int CalculateCurrentStreak(List<Resolution> resolutions)
     {
         var allCheckIns = resolutions
             .SelectMany(r => r.CheckIns)
@@ -91,7 +91,7 @@ public class StatisticsService
         return streak;
     }
 
-    private int CalculateLongestStreak(List<Resolution> resolutions)
+    private static int CalculateLongestStreak(List<Resolution> resolutions)
     {
         var allCheckIns = resolutions
             .SelectMany(r => r.CheckIns)
@@ -124,7 +124,7 @@ public class StatisticsService
         return longestStreak;
     }
 
-    private string GetMostActiveCategory(List<Resolution> resolutions)
+    private static string GetMostActiveCategory(List<Resolution> resolutions)
     {
         if (!resolutions.Any())
             return "None";
@@ -136,7 +136,7 @@ public class StatisticsService
             .Key;
     }
 
-    private List<RecentActivityItem> GetRecentActivity(List<Resolution> resolutions)
+    private static List<RecentActivityItem> GetRecentActivity(List<Resolution> resolutions)
     {
         var recentCheckIns = resolutions
             .SelectMany(r => r.CheckIns.Select(c => new { Resolution = r, CheckIn = c }))

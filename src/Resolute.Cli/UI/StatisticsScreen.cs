@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using ConsoleApp.Models;
@@ -27,16 +27,16 @@ public class StatisticsScreen
 
         var report = _statisticsService.GenerateReport();
 
-        DisplayOverview(report);
-        DisplayCategoryBreakdown(report);
-        DisplayStreakInfo(report);
-        DisplayRecentActivity(report);
+    DisplayOverview(report);
+    DisplayCategoryBreakdown(report);
+    DisplayStreakInfo(report);
+    DisplayRecentActivity(report);
 
         Console.WriteLine("\nPress any key to return to main menu...");
         Console.ReadKey();
     }
 
-    private void DisplayOverview(StatisticsReport report)
+    private static void DisplayOverview(StatisticsReport report)
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("📈 Overview");
@@ -70,7 +70,7 @@ public class StatisticsScreen
         Console.WriteLine();
     }
 
-    private void DisplayCategoryBreakdown(StatisticsReport report)
+    private static void DisplayCategoryBreakdown(StatisticsReport report)
     {
         if (!report.CategoryBreakdown.Any())
         {
@@ -112,7 +112,7 @@ public class StatisticsScreen
         Console.WriteLine();
     }
 
-    private void DisplayStreakInfo(StatisticsReport report)
+    private static void DisplayStreakInfo(StatisticsReport report)
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("🔥 Streak Information");
@@ -143,7 +143,7 @@ public class StatisticsScreen
         Console.WriteLine();
     }
 
-    private void DisplayRecentActivity(StatisticsReport report)
+    private static void DisplayRecentActivity(StatisticsReport report)
     {
         if (!report.RecentActivity.Any())
         {

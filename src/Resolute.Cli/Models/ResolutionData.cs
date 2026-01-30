@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-
-namespace ConsoleApp.Models;
+﻿namespace ConsoleApp.Models;
 
 public class ResolutionData
 {
-    public List<Resolution> Resolutions { get; set; } = new();
+  public List<Resolution> Resolutions { get; set; } = [];
 }

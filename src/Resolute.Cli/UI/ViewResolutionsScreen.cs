@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,7 +21,7 @@ public class ViewResolutionsScreen
         Console.Clear();
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("╔════════════════════════════════════╗");
-        Console.WriteLine("║    📋 All Resolutions              ║");
+        Console.WriteLine("║       All Resolutions              ║");
         Console.WriteLine("╚════════════════════════════════════╝");
         Console.ResetColor();
         Console.WriteLine();
@@ -32,7 +32,7 @@ public class ViewResolutionsScreen
         Console.WriteLine("  3. Completed only");
         Console.WriteLine("  4. By category");
 
-        var choice = InputValidator.GetChoice("Select filter: ", new[] { "1", "2", "3", "4" });
+        var choice = InputValidator.GetChoice("Select filter: ", ["1", "2", "3", "4"]);
 
         IEnumerable<Resolution> resolutions = choice switch
         {
@@ -43,7 +43,7 @@ public class ViewResolutionsScreen
             _ => _resolutionManager.GetAllResolutions()
         };
 
-        DisplayResolutions(resolutions);
+    DisplayResolutions(resolutions);
 
         Console.WriteLine("\nOptions:");
         Console.WriteLine("  Enter resolution number to view details");
@@ -86,7 +86,7 @@ public class ViewResolutionsScreen
         return _resolutionManager.GetResolutionsByCategory(categories[choice - 1]);
     }
 
-    private void DisplayResolutions(IEnumerable<Resolution> resolutions)
+    private static void DisplayResolutions(IEnumerable<Resolution> resolutions)
     {
         var resolutionsList = resolutions.ToList();
 
